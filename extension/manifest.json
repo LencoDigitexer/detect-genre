@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Detect Genre",
+    "version": "1.0",
+    
+    
+    "content_scripts": [{
+        "js": ["jquery.min.js"],
+        "matches": ["http://*/*", "https://*/*"]
+      }],
+    
+    "permissions": [
+      "https://api.soundcloud.com/*"
+    ],
+  
+        "browser_action": {
+          "default_title": "Detect Genre",
+          
+          "default_popup": "popup.html"
+      }
+      
+  }
