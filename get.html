@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" /> </head>
+
+<body>
+	<div id="output"></div>
+	<script>
+        
+        var request = new XMLHttpRequest();
+
+        function reqReadyStateChange() {
+            if(request.readyState == 4) {
+                var status = request.status;
+                if(status == 200) {
+                    document.getElementById("output").innerHTML = request.responseText;
+                }
+            }
+        }
+        // строка с параметрами для отправки
+        var body = "alivvve";
+        request.open("GET", "https://api.soundcloud.com/tracks?client_id=a25e51780f7f86af0afa91f241d091f8&q=" + body);
+        request.onreadystatechange = reqReadyStateChange;
+        request.send();
+	</script>
+</body>
+
+</html>
