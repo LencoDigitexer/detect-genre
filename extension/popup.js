@@ -13,8 +13,15 @@ function printForm(e) {
             if(status == 200) {
                 //document.getElementById("output").innerHTML = request.responseText;
                 const obj = JSON.parse(request.responseText);
-                document.getElementById("output").innerHTML = obj[0].id;
-                document.getElementById("output").innerHTML = obj[0].genre;
+                //document.getElementById("output").innerHTML = obj[0].id;
+                document.getElementById("genre1").innerHTML = obj[0].genre;
+                document.getElementById("genre2").innerHTML = obj[1].genre;
+                document.getElementById("title1").innerHTML = obj[0].title;
+                document.getElementById("title2").innerHTML = obj[1].title;
+                document.getElementById("user1").innerHTML = obj[0].user.username;
+                document.getElementById("user2").innerHTML = obj[1].user.username;
+                document.getElementById("img1").src=obj[0].artwork_url;
+                document.getElementById("img2").src=obj[0].artwork_url;
             }
         }
     }
@@ -27,5 +34,11 @@ function printForm(e) {
     
     
 }
+
+
+
+
+
 var printButton = document.search.print;
 printButton.addEventListener("click", printForm);
+//printButton.addEventListener('keydown', printForm);

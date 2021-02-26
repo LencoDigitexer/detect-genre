@@ -5,7 +5,7 @@
     
     
     "content_scripts": [{
-        "js": ["jquery.min.js"],
+        "js": ["popup.js"],
         "matches": ["http://*/*", "https://*/*"]
       }],
     
