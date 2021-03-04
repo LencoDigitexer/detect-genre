@@ -53,7 +53,7 @@ function send_current(){
             if(status == 200) {
                 const obj = JSON.parse(request.responseText);
                 document.getElementById("test").innerHTML = obj["item"]["name"] + " " + obj["item"]["artists"][0]["name"];
-                get_genre(obj["item"]["name"] + " " + obj["item"]["artists"][0]["name"]);
+                get_genre(obj["item"]["artists"][0]["name"] + " " + obj["item"]["name"]);
             }
         }
     }
@@ -62,7 +62,7 @@ function send_current(){
     request.setRequestHeader("Accept", "application/json");
     request.setRequestHeader("Content-Type", "application/json");
     // get token https://developer.spotify.com/console/get-users-currently-playing-track/?market=RU&additional_types=
-    request.setRequestHeader("Authorization", "Bearer BQD7UCIimBdcfUTjrlkGcJi9E-LRdzCTQ2ka6R1pUL6q63ZGiT8wIsL2431B7rEZSf4IqfPXQRMbQAARlKDrToOUN2MEMrGcqU_BZAum0SFoDQ9t55rFNYJRGApIIfkmHGiMMoRC4Ysbo8FugfV_YgDq1a4h2W-HVQtv-Ug");
+    request.setRequestHeader("Authorization", "Bearer BQDA09o_80GlHd_wN7xNBigdLHKkGadF6MRAma3lH_aK_Znjss0NphBKlDxTPXBrHX4ZnEoiseiHIsxkx_XXPIq_U5nLqUEkCPWvrqy07IrlOovSNhBgFRLGoSOqHWH3D1zhKeZN-cfU3t-6XtVIQDKNuFSdTjmrkVlFlJExTCqc6IJLTYgNgziAXobQWM_VQMHJmCFO7XqRGUQF2K52521bX9QHGAXO5_UiT4-VtHR91va81I_1U-UycCZuP18cM821s3f-h9NDLDQLP_2Nk0ht2a1S8w");
 
     
     request.onreadystatechange = change_info;
