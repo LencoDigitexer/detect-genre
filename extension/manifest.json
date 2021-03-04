@@ -9,9 +9,8 @@
         "matches": ["http://*/*", "https://*/*"]
       }],
     
-    "permissions": [
-      "https://api.soundcloud.com/*"
-    ],
+    
+    "permissions": [  "activeTab", "declarativeContent", "storage",       "tabs",         "http://*/*"     ],
   
         "browser_action": {
           "default_title": "Detect Genre",

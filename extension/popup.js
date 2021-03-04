@@ -22,6 +22,20 @@ function printForm(e) {
                 document.getElementById("user2").innerHTML = obj[1].user.username;
                 document.getElementById("img1").src=obj[0].artwork_url;
                 document.getElementById("img2").src=obj[0].artwork_url;
+                chrome.tabs.query({active : true, currentWindow: true}, function (tab) {
+                    var activeTabUrl = tab.url;
+                    document.getElementById("tabsurl").innerHTML = tab;
+                    console.log(activeTabUrl);
+                });
+
+                chrome.storage.local.set({'token': 'abc123'}, function() {
+                    console.log('Settings saved');
+                });
+                chrome.storage.local.set(['token'], function(items) {
+                    message('Settings retrieved', items);
+                    document.getElementById("test")  = items;
+                });
+                
             }
         }
     }
