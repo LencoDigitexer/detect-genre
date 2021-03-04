@@ -49,7 +49,35 @@ function printForm(e) {
     
 }
 
+send_current();
 
+function send_current(){
+    
+    var url = "https://api.spotify.com/v1/me/player/currently-playing?market=RU";
+
+    var request = new XMLHttpRequest();
+    
+    function change_info() {
+        if(request.readyState == 4) {
+            var status = request.status;
+            if(status == 200) {
+                const obj = JSON.parse(request.responseText);
+                document.getElementById("test").innerHTML = obj["item"]["name"] + " " + obj["item"]["artists"][0]["name"];
+                
+            }
+        }
+    }
+    
+    request.open("GET", url);
+    request.setRequestHeader("Accept", "application/json");
+    request.setRequestHeader("Content-Type", "application/json");
+    request.setRequestHeader("Authorization", "Bearer BQDfHuCO4qTzk0LHxpMBCi7n2D3yAV2aOqCm_0g6mwJP_WlkytWkftrwOq4TjGtm0NbmuQxE8PZfT_JO3oKpz3ib4fAFjeR7T_f2in4n7_UYsIFrRVNcIx2RsChKpI4bXqodTtpbpHIW88e1TROwwczQ6cQ6j73xPg1gToI");
+
+    
+    request.onreadystatechange = change_info;
+    request.send();
+    
+}
 
 
 
