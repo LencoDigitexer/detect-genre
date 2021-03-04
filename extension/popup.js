@@ -22,19 +22,9 @@ function printForm(e) {
                 document.getElementById("user2").innerHTML = obj[1].user.username;
                 document.getElementById("img1").src=obj[0].artwork_url;
                 document.getElementById("img2").src=obj[0].artwork_url;
-                chrome.tabs.query({active : true, currentWindow: true}, function (tab) {
-                    var activeTabUrl = tab.url;
-                    document.getElementById("tabsurl").innerHTML = tab;
-                    console.log(activeTabUrl);
-                });
+                
 
-                chrome.storage.local.set({'token': 'abc123'}, function() {
-                    console.log('Settings saved');
-                });
-                chrome.storage.local.set(['token'], function(items) {
-                    message('Settings retrieved', items);
-                    document.getElementById("test")  = items;
-                });
+                
                 
             }
         }
@@ -71,7 +61,8 @@ function send_current(){
     request.open("GET", url);
     request.setRequestHeader("Accept", "application/json");
     request.setRequestHeader("Content-Type", "application/json");
-    request.setRequestHeader("Authorization", "Bearer BQDfHuCO4qTzk0LHxpMBCi7n2D3yAV2aOqCm_0g6mwJP_WlkytWkftrwOq4TjGtm0NbmuQxE8PZfT_JO3oKpz3ib4fAFjeR7T_f2in4n7_UYsIFrRVNcIx2RsChKpI4bXqodTtpbpHIW88e1TROwwczQ6cQ6j73xPg1gToI");
+    // get token https://developer.spotify.com/console/get-users-currently-playing-track/?market=RU&additional_types=
+    request.setRequestHeader("Authorization", "Bearer BQD7UCIimBdcfUTjrlkGcJi9E-LRdzCTQ2ka6R1pUL6q63ZGiT8wIsL2431B7rEZSf4IqfPXQRMbQAARlKDrToOUN2MEMrGcqU_BZAum0SFoDQ9t55rFNYJRGApIIfkmHGiMMoRC4Ysbo8FugfV_YgDq1a4h2W-HVQtv-Ug");
 
     
     request.onreadystatechange = change_info;
@@ -104,19 +95,7 @@ function get_genre(track_name) {
                 document.getElementById("user2").innerHTML = obj[1].user.username;
                 document.getElementById("img1").src=obj[0].artwork_url;
                 document.getElementById("img2").src=obj[0].artwork_url;
-                chrome.tabs.query({active : true, currentWindow: true}, function (tab) {
-                    var activeTabUrl = tab.url;
-                    document.getElementById("tabsurl").innerHTML = tab;
-                    console.log(activeTabUrl);
-                });
-
-                chrome.storage.local.set({'token': 'abc123'}, function() {
-                    console.log('Settings saved');
-                });
-                chrome.storage.local.set(['token'], function(items) {
-                    message('Settings retrieved', items);
-                    document.getElementById("test")  = items;
-                });
+                
                 
             }
         }

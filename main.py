@@ -2,6 +2,7 @@ import requests,json, os, time
 
 
 def print_info():
+    # get token https://developer.spotify.com/console/get-users-currently-playing-track/?market=RU&additional_types=
     headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
