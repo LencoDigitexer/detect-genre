@@ -67,7 +67,7 @@ function send_current(){
     request.setRequestHeader("Accept", "application/json");
     request.setRequestHeader("Content-Type", "application/json");
     // get token https://developer.spotify.com/console/get-users-currently-playing-track/?market=RU&additional_types=
-    request.setRequestHeader("Authorization", "Bearer BQDEiazIUy0zQon-NIqm4J40Sn7ZPSHTlDqqgEDBDFai-TVf6XTwRg4rBt0tLqEcoJr-L1zkjGA9psdxnNe7yPpkFUBLNCh2xP0QyOmNJtFw5toISMbj9GLuJBGB1Kb_8tYzwTWKQ39-wTyCG2sSb4O2vax9WjJbvfc15m5_cgUkDPV82nob1HN-bWcHaOFmJLAdINVN9TS1S0ic-nkgDg0Yl99-26tOWn9_Vw2I_pH0Xk8hlk9EZsEHpkvcwLJ-AW-eRMiLUFONC_8PH8kBYQBYs9YrpQ");
+    request.setRequestHeader("Authorization", "Bearer BQCcTC_-KcVfn9K8XI8cL2-aCjGDlxk3pAFc70Afv5YYQRLtrWlDlcYxT-euXm6eEmYPsCMnfnyfyJV6owvSpJGeoS0iA0Lwznm5RtjlPM0sCDCSlt26Q6fzzN35j3rUe9lcGsXVDUAEGjBAKXKB3FQwZO-eL0olmgNCqLjwbDyVhgSBstgOOvRsai0qbVgO1RykuMB3GV0mDAYzqPiGpx6_3KksbL8d7_ubv2xdBSpRaZDevgozUlgPO9STTpjsWDcXT7kG8Gm31_WK68Zkpnqz_WASFA");
 
     
     request.onreadystatechange = change_info;
