@@ -3,44 +3,38 @@
 
 <head>
 	<meta charset="utf-8" /> </head>
-
+	<link href="./css/main.css" rel="stylesheet" />
 <body>
-    <h1>Определитель жанра</h1>
-
+    
+	
 	<form name="search">
 		<input type="text" name="key" placeholder="Введите название"></input>
 		<input type="button" name="print"  value="Определить" /> 
     </form>
 
 	
+	
     <div id="output"></div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="jquery.js"></script>
-	<p>Сейчас играет:</p>
-
+	
+	<div id="now_play">Сейчас играет:</div>
+	
 		<div id="test"></div>
 
-	<p>------</p>
-
-	<script src="popup.js"></script>
+	<script src="js/popup.js"></script>
 	
 	
 	<div id="tabsurl"></div>
-	<div id="list">
-		<h3>
-			<img id="img1" width="150">
-			<p id="user1"></p>
-			<p id="title1"></p>
-			<p id="genre1"></p>
-		</h3>
-		<hr> 
-		<h3>
-			<img id="img2" width="150">
-			<p id="user2"></p>
-			<p id="title2"></p>
-			<p id="genre2"></p>
-		</h3>
-	</div>
+
+	<div id="imgs"></div>
+	<div id="title"></div>
+	<div id="title_genre">Жанры:</div>
+	<div id="overlay"></div>
+	<div id="genre1"></div>
+	<div id="genre2"></div>
+	<div id="genre3"></div>
+	
+
+	
 
 	
 </body>

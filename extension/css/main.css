@@ -1,0 +1,134 @@
+body {
+    min-width:380px;
+    min-height: 568px;
+}
+
+#now_play{
+    top: 120px;
+    width: 100%;
+    color: rgba(0,0,0,1);
+    position:fixed;
+    font-family: Roboto Mono;
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: center;
+}
+
+
+#imgs {
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient(135deg,#8e8485,#846170);
+    background: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: sticky;
+    top: 160px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin: 0 auto; 
+    
+}
+
+#title {
+    width: 98%;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 280px;
+   
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Roboto Mono;
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: center;
+}
+#title_genre{
+    width: 98%;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 320px;
+    font-family: Roboto Mono;
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: center;
+}
+
+#genre1{
+    width: 98%;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 360px;
+    font-family: Roboto Mono;
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: center;
+}
+#genre2{
+    width: 98%;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 390px;
+    font-family: Roboto Mono;
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: center;
+}
+#genre3{
+    width: 98%;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 420px;
+    font-family: Roboto Mono;
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: center;
+}
+
+#overlay{
+    filter: blur(20px);
+    width: 100px;
+    height: 150px;
+    background: rgba(0,0,0,0.35);
+    opacity: 0.5;
+    position: sticky;
+    top: 330px;
+    border-top-left-radius: 70px;
+    border-top-right-radius: 70px;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    overflow: hidden;
+    margin: 0 auto; 
+}
+
+
+
+
+// Setup
+body {background: var(--color-dark); display: flex; align-items: center; justify-content: center; min-height: 100vh }
+html { box-sizing: border-box; height: 100%; font-size: 10px; } *, *::before, *::after { box-sizing: inherit; }
+
+// Main styles
+form {
+  position: relative;
+  width: 30rem;
+  background: var(--color-brand);
+  border-radius: var(--rad);
+}
+input, button {
+  height: var(--height);
+  font-family: var(--font-fam);
+  border: 0;
+  color: var(--color-dark);
+  font-size: 1.8rem;
+}
+
+
+

@@ -13,15 +13,20 @@ function printForm(e) {
             if(status == 200) {
                 //document.getElementById("output").innerHTML = request.responseText;
                 const obj = JSON.parse(request.responseText);
-                //document.getElementById("output").innerHTML = obj[0].id;
-                document.getElementById("genre1").innerHTML = obj[0].genre;
-                document.getElementById("genre2").innerHTML = obj[1].genre;
-                document.getElementById("title1").innerHTML = obj[0].title;
-                document.getElementById("title2").innerHTML = obj[1].title;
-                document.getElementById("user1").innerHTML = obj[0].user.username;
-                document.getElementById("user2").innerHTML = obj[1].user.username;
-                document.getElementById("img1").src=obj[0].artwork_url;
-                document.getElementById("img2").src=obj[0].artwork_url;
+                var adds = 0;
+                for (let i = 0; i < 3; i++) { // выведет 0, затем 1, затем 2
+                    if(obj[i].genre!=""){
+                        document.getElementById("genre" + Number(i+1)).innerHTML = obj[i].genre;
+                    } else {
+                        adds++;
+                        document.getElementById("genre" + Number(i+1)).innerHTML = obj[Number(i+adds)].genre;
+                    }
+                }
+                document.getElementById("title").innerHTML = obj[0].title + " - " + obj[0].user.username;
+                //document.getElementById("user").innerHTML = obj[0].user.username;
+                
+                document.getElementById('imgs').style.background = "url("+obj[0].artwork_url+")"
+                    
                 
 
                 
@@ -52,7 +57,7 @@ function send_current(){
             var status = request.status;
             if(status == 200) {
                 const obj = JSON.parse(request.responseText);
-                document.getElementById("test").innerHTML = obj["item"]["name"] + " " + obj["item"]["artists"][0]["name"];
+                //document.getElementById("test").innerHTML = obj["item"]["name"] + " " + obj["item"]["artists"][0]["name"];
                 get_genre(obj["item"]["artists"][0]["name"] + " " + obj["item"]["name"]);
             }
         }
@@ -62,7 +67,7 @@ function send_current(){
     request.setRequestHeader("Accept", "application/json");
     request.setRequestHeader("Content-Type", "application/json");
     // get token https://developer.spotify.com/console/get-users-currently-playing-track/?market=RU&additional_types=
-    request.setRequestHeader("Authorization", "Bearer BQDA09o_80GlHd_wN7xNBigdLHKkGadF6MRAma3lH_aK_Znjss0NphBKlDxTPXBrHX4ZnEoiseiHIsxkx_XXPIq_U5nLqUEkCPWvrqy07IrlOovSNhBgFRLGoSOqHWH3D1zhKeZN-cfU3t-6XtVIQDKNuFSdTjmrkVlFlJExTCqc6IJLTYgNgziAXobQWM_VQMHJmCFO7XqRGUQF2K52521bX9QHGAXO5_UiT4-VtHR91va81I_1U-UycCZuP18cM821s3f-h9NDLDQLP_2Nk0ht2a1S8w");
+    request.setRequestHeader("Authorization", "Bearer BQDEiazIUy0zQon-NIqm4J40Sn7ZPSHTlDqqgEDBDFai-TVf6XTwRg4rBt0tLqEcoJr-L1zkjGA9psdxnNe7yPpkFUBLNCh2xP0QyOmNJtFw5toISMbj9GLuJBGB1Kb_8tYzwTWKQ39-wTyCG2sSb4O2vax9WjJbvfc15m5_cgUkDPV82nob1HN-bWcHaOFmJLAdINVN9TS1S0ic-nkgDg0Yl99-26tOWn9_Vw2I_pH0Xk8hlk9EZsEHpkvcwLJ-AW-eRMiLUFONC_8PH8kBYQBYs9YrpQ");
 
     
     request.onreadystatechange = change_info;
@@ -87,14 +92,22 @@ function get_genre(track_name) {
                 //document.getElementById("output").innerHTML = request.responseText;
                 const obj = JSON.parse(request.responseText);
                 //document.getElementById("output").innerHTML = obj[0].id;
-                document.getElementById("genre1").innerHTML = obj[0].genre;
-                document.getElementById("genre2").innerHTML = obj[1].genre;
-                document.getElementById("title1").innerHTML = obj[0].title;
-                document.getElementById("title2").innerHTML = obj[1].title;
-                document.getElementById("user1").innerHTML = obj[0].user.username;
-                document.getElementById("user2").innerHTML = obj[1].user.username;
-                document.getElementById("img1").src=obj[0].artwork_url;
-                document.getElementById("img2").src=obj[0].artwork_url;
+
+                var adds = 0;
+                for (let i = 0; i < 3; i++) { // выведет 0, затем 1, затем 2
+                    if(obj[i].genre!=""){
+                        document.getElementById("genre" + Number(i+1)).innerHTML = obj[i].genre;
+                    } else {
+                        adds++;
+                        document.getElementById("genre" + Number(i+1)).innerHTML = obj[Number(i+adds)].genre;
+                    }
+                }
+
+                
+                document.getElementById("title").innerHTML = obj[0].title + " - " + obj[0].user.username;
+                //document.getElementById("user").innerHTML = obj[0].user.username;
+                
+                document.getElementById('imgs').style.background = "url("+obj[0].artwork_url+")"
                 
                 
             }
