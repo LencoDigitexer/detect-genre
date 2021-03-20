@@ -10,30 +10,37 @@
 	<form name="search">
 		<input type="text" name="key" placeholder="Введите название"></input>
 		<input type="button" name="print"  value="Определить" /> 
+		<button type="button" name="screenshot_page">
+			<img src="/images/icon-screen.png" alt="Выключатель" title="Выключатель" width="15" height="15">
+		</button>
     </form>
+	
+	
 
 	
-	
-    <div id="output"></div>
-	
-	<div id="now_play">Сейчас играет:</div>
-	
-		<div id="test"></div>
+	<div id="screen"></div>
+		<div id="output"></div>
+		
+		<div id="now_play">Сейчас играет:</div>
+		
+			<div id="test"></div>
 
-	<script src="js/popup.js"></script>
-	
-	
-	<div id="tabsurl"></div>
+		<script src="js/popup.js"></script>
+		<script type="text/javascript" src="/js/html2canvas.js"></script>
+		
+		
+		<div id="tabsurl"></div>
 
-	<div id="imgs"></div>
-	<div id="title"></div>
-	<div id="title_genre">Жанры:</div>
-	<div id="overlay"></div>
-	<div id="genre1"></div>
-	<div id="genre2"></div>
-	<div id="genre3"></div>
+		<div id="imgs"></div>
+		<div id="title"></div>
+		<div id="title_genre">Жанры:</div>
+		<div id="overlay"></div>
+		<div id="genre1"></div>
+		<div id="genre2"></div>
+		<div id="genre3"></div>
+	</div>
+	<div id="result"></div>
 	
-
 	
 
 	

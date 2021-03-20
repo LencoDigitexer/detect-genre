@@ -44,10 +44,42 @@ function printForm(e) {
     
 }
 
-send_current();
+getAccesToken();
+function getAccesToken(){
+    var url = "https://open.spotify.com/get_access_token";
 
-function send_current(){
+    var request = new XMLHttpRequest();
+    var strr;
+    function change_info() {
+        if(request.readyState == 4) {
+            var status = request.status;
+            if(status == 200) {
+                const obj = JSON.parse(request.responseText);
+                //document.getElementById("test").innerHTML = obj["item"]["name"] + " " + obj["item"]["artists"][0]["name"];
+                //get_genre(obj["item"]["artists"][0]["name"] + " " + obj["item"]["name"]);
+                strr = "Bearer " + obj["accessToken"]
+                console.log(strr)
+                //strr = "Bearer BQDBGUtY_0T1Vlz1zrCGQrM5TyTJgvAd64YAHUyn_2M5qYjPEY7YR0nhlTLi_iNe-KKZX-AAtDOWpQige7LU_1AlzdD5cJn2BAZYFOhgzQnOpzFGdPDZzW-7-_LwrRTaw7gUfviNznlquBobRNu05PKv4ocwS69T_1S0FwiQ68tQU10CpisID9opQVJtoepy6bHWiFjemlFVIeXaPPeSM68c9xBT08pb79Mz91v4iJnnRxZcR5E5SPetn5Ddp7G8mAW9EtcrcPp2jqe5Vb-rdnsLQiFlTODKtQ2N56TQdC_5zlCW-ioVAv-o";
+                send_current(strr);
+                
+            }
+        }
+    }
     
+    request.open("GET", url);
+    request.setRequestHeader("Accept", "application/json");
+    request.setRequestHeader("Content-Type", "application/json");
+
+    request.onreadystatechange = change_info;
+    request.send();
+    
+    
+}
+
+
+
+function send_current(token){
+    var token = token;
     var url = "https://api.spotify.com/v1/me/player/currently-playing?market=RU";
 
     var request = new XMLHttpRequest();
@@ -67,7 +99,11 @@ function send_current(){
     request.setRequestHeader("Accept", "application/json");
     request.setRequestHeader("Content-Type", "application/json");
     // get token https://developer.spotify.com/console/get-users-currently-playing-track/?market=RU&additional_types=
-    request.setRequestHeader("Authorization", "Bearer BQCcTC_-KcVfn9K8XI8cL2-aCjGDlxk3pAFc70Afv5YYQRLtrWlDlcYxT-euXm6eEmYPsCMnfnyfyJV6owvSpJGeoS0iA0Lwznm5RtjlPM0sCDCSlt26Q6fzzN35j3rUe9lcGsXVDUAEGjBAKXKB3FQwZO-eL0olmgNCqLjwbDyVhgSBstgOOvRsai0qbVgO1RykuMB3GV0mDAYzqPiGpx6_3KksbL8d7_ubv2xdBSpRaZDevgozUlgPO9STTpjsWDcXT7kG8Gm31_WK68Zkpnqz_WASFA");
+
+
+
+    request.setRequestHeader("Authorization", token);
+    
 
     
     request.onreadystatechange = change_info;
@@ -123,9 +159,21 @@ function get_genre(track_name) {
     
 }
 
+function takeScreenshot(){
+    console.log("screen");
+    html2canvas(document.getElementById("screen")).then(function(canvas) {
+    
+        var my_screen = canvas;
 
+        document.getElementById("result").appendChild(my_screen);
+
+    });
+}
 
 
 var printButton = document.search.print;
 printButton.addEventListener("click", printForm);
 //printButton.addEventListener('keydown', printForm);
+
+var screenshot_page = document.search.screenshot_page;
+screenshot_page.addEventListener("click", takeScreenshot);

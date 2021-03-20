@@ -1,5 +1,5 @@
 body {
-    min-width:380px;
+    min-width:390px;
     min-height: 568px;
 }
 
@@ -15,6 +15,20 @@ body {
     text-align: center;
 }
 
+#spotify {
+
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: sticky;
+    top: 160px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin: 0 auto; 
+    
+}
 
 #imgs {
     width: 100px;
@@ -131,5 +145,8 @@ input, button {
   font-size: 1.8rem;
 }
 
-
+#icon-screen
+{
+    background: url("/images/icon-screen.png") center center / 80% no-repeat;
+}
 
