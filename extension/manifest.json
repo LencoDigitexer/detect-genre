@@ -5,12 +5,12 @@
     
     
     "content_scripts": [{
-        "js": ["popup.js"],
+        "js": ["js/popup.js"],
         "matches": ["http://*/*", "https://*/*"]
       }],
     
     
-    "permissions": [  "activeTab", "declarativeContent", "storage",       "tabs",         "http://*/*"     ],
+    "permissions": [  "activeTab", "declarativeContent", "storage",       "tabs",         "http://*/*", "https://open.spotify.com/get_access_token", "https://api.spotify.com/v1/me/player/currently-playing?market=RU"  ],
   
         "browser_action": {
           "default_title": "Detect Genre",
